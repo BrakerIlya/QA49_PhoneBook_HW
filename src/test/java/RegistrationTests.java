@@ -3,11 +3,9 @@ import manager.ApplicationManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import pages.ContactPage;
+import pages.ContactsPage;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.BasePage;
 
 
 import static utils.User_Factory.*;
@@ -22,7 +20,7 @@ public class RegistrationTests extends ApplicationManager {
         User user = positiveUser();
         LoginPage loginPage= new LoginPage(getDriver());
         loginPage.typeRegFormWithUser(user);
-        Assert.assertTrue(new ContactPage(getDriver()).isNoContactsHerePresent());
+        Assert.assertTrue(new ContactsPage(getDriver()).isNoContactsHerePresent());
     }
     @Test
     public void NegativeRegTestWrongEmail(){

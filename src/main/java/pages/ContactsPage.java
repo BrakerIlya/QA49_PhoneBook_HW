@@ -8,8 +8,8 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import java.util.List;
 
-public class ContactPage extends BasePage {
-    public ContactPage(WebDriver driver){
+public class ContactsPage extends BasePage {
+    public ContactsPage(WebDriver driver){
         setDriver(driver);
         PageFactory.initElements(new AjaxElementLocatorFactory(driver,10),this);
 
@@ -37,5 +37,7 @@ public class ContactPage extends BasePage {
     public boolean isNoContactsHerePresent() {
         return isElementDisplayed(noContactsHere);
     }
-
+    public int getNumberOfContacts(){
+        return contactList.size();
+    }
 }
